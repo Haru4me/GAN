@@ -15,7 +15,7 @@ $ python3 pretrained_test.py
 ```
 
 <p align="center">
-    <img src="MNIST.gif" width="480"\>
+    <img src="MNIST_gen.gif" width="480"\>
 </p>
 <p align="center">
     Пример сгенерированных цифр
