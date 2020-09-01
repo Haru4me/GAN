@@ -15,6 +15,7 @@ $ cd GAN/
 $ python3 pretrained_test.py
 ```
 <p align="center">
-		<b>Пример сгенерированных цифр:</b>
-    <img src="MNIST_gen.gif" width="480"\>
+    <b>Пример сгенерированных цифр:</b>
+    <br><br>
+    <img src="MNIST_gen.gif" width="480">
 </p>

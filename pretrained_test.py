@@ -33,7 +33,7 @@ def img_samples(G, epoch, device, test=False):
 		plt.imshow(img, cmap='gist_gray')
 		plt.axis('off')
 
-	plt.savefig("./{0}/img_{1}.png".format(dirr,epoch))
+	plt.savefig("./{0}/img_{1}.png".format(dirr,epoch), bbox_inches="tight")
 	plt.close()
 
 
