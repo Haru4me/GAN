@@ -97,9 +97,6 @@ def train(train_data, generator, discriminator, opt_g, opt_d, loss, num_epoch=10
 
 if __name__ == "__main__":
 
-	#os.makedirs('./test_imgs')
-	#os.makedirs('./train_imgs')
-
 	batch_size=128
 	transform = transforms.Compose([transforms.ToTensor(), transforms.Normalize([0.5], [0.5])])
 	dataload = DataLoader(datasets.MNIST("./", train=True, download=True, transform=transform),
@@ -119,8 +116,13 @@ if __name__ == "__main__":
 
 	train(dataload, G, D, optimizer_G, optimizer_D, loss)
 
+	for i in tqdm(range(20), desc="Test"):
+
+		img_samples(G, i, device, test=True)
+
+
 	images = []
-	for i in tqdm(range(100), desc="Test"):
+	for i in range(20):
 		images.append(imageio.imread("./test_imgs/img_%i.png"%i))
 
 	imageio.mimsave("./test_imgs/MNIST_gen.gif", images)

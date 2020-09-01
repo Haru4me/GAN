@@ -39,7 +39,6 @@ def img_samples(G, epoch, device, test=False):
 
 if __name__ == "__main__":
 
-	os.makedirs('./test_imgs')
 
 	batch_size=128
 	device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -47,13 +46,13 @@ if __name__ == "__main__":
 	path = './saved_model/G_ab_100.pth'
 	G = torch.load(path,map_location=torch.device('cpu'))
 
-	for i in tqdm(range(100), desc="Test"):
+	for i in tqdm(range(20), desc="Test"):
 
 		img_samples(G, i, device, test=True)
 
 
 	images = []
-	for i in range(100):
+	for i in range(20):
 		images.append(imageio.imread("./test_imgs/img_%i.png"%i))
 
 	imageio.mimsave("./test_imgs/MNIST_gen.gif", images)
